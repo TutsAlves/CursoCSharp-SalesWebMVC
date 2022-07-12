@@ -12,20 +12,24 @@
 
 <table class="table table-striped table-hover table-bordered">
     <thead class="thead-light">
-        <th class="sucess">
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BirthDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BaseSalary)
-        </th>
-        <th></th>
+        <tr class="sucess">
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BirthDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BaseSalary)
+            </th>
+            <th>
+            </th>
+        </tr>
     </thead>
+
     <tbody>
         @foreach (var item in Model)
         {
@@ -43,11 +47,12 @@
                     @Html.DisplayFor(modelItem => item.BaseSalary)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-rout-id="@item.Id">Edit</a>
-                    <a asp-action="Details" asp-rout-id="@item.Id">Details</a>
-                    <a asp-action="Delete" asp-rout-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-secondary">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-secondary">Delete</a>
                 </td>
             </tr>
+
         }
     </tbody>
 </table>
